@@ -277,44 +277,55 @@ export default function EmployeeDirectory() {
               </tr>
             </thead>
             <tbody>
-              {filtered.map((emp) => (
-                <tr
-                  key={emp.id}
-                  className="border-t border-theme hover:bg-muted/50 transition-colors"
-                >
-                  <td className="p-3">{emp.name}</td>
-                  <td className="p-3">{emp.email}</td>
-                  <td className="p-3">{emp.department}</td>
-                  <td className="p-3">{emp.role}</td>
-                  <td className="p-3">
-                    <span
-                      className={`px-2 py-1 rounded-full text-xs font-medium ${
-                        emp.status === "Active"
-                          ? "bg-green-100 text-green-800 dark:bg-green-900 dark:text-green-200"
-                          : "bg-red-100 text-red-800 dark:bg-red-900 dark:text-red-200"
-                      }`}
-                    >
-                      {emp.status}
-                    </span>
-                  </td>
-                  <td className="p-3">
-                    <div className="flex space-x-2">
-                      <button
-                        onClick={() => handleEdit(emp)}
-                        className="text-blue-600 hover:text-blue-800 text-sm transition-colors"
+              {filtered.length ? (
+                filtered.map((emp) => (
+                  <tr
+                    key={emp.id}
+                    className="border-t border-theme hover:bg-muted/50 transition-colors"
+                  >
+                    <td className="p-3">{emp.name}</td>
+                    <td className="p-3">{emp.email}</td>
+                    <td className="p-3">{emp.department}</td>
+                    <td className="p-3">{emp.role}</td>
+                    <td className="p-3">
+                      <span
+                        className={`px-2 py-1 rounded-full text-xs font-medium ${
+                          emp.status === "Active"
+                            ? "bg-green-100 text-green-800 dark:bg-green-900 dark:text-green-200"
+                            : "bg-red-100 text-red-800 dark:bg-red-900 dark:text-red-200"
+                        }`}
                       >
-                        Edit
-                      </button>
-                      <button
-                        onClick={() => handleDelete(emp.id)}
-                        className="text-red-600 hover:text-red-800 text-sm transition-colors"
-                      >
-                        Delete
-                      </button>
-                    </div>
+                        {emp.status}
+                      </span>
+                    </td>
+                    <td className="p-3">
+                      <div className="flex space-x-2">
+                        <button
+                          onClick={() => handleEdit(emp)}
+                          className="text-blue-600 hover:text-blue-800 text-sm transition-colors"
+                        >
+                          Edit
+                        </button>
+                        <button
+                          onClick={() => handleDelete(emp.id)}
+                          className="text-red-600 hover:text-red-800 text-sm transition-colors"
+                        >
+                          Delete
+                        </button>
+                      </div>
+                    </td>
+                  </tr>
+                ))
+              ) : (
+                <tr className="border-t border-theme">
+                  <td
+                    colSpan={6}
+                    className="p-4 text-center text-muted-foreground"
+                  >
+                    No data found
                   </td>
                 </tr>
-              ))}
+              )}
             </tbody>
           </table>
         )}

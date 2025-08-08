@@ -9,6 +9,7 @@ export default function ProfilePage() {
   const [isEditing, setIsEditing] = useState(false);
   const [isSaving, setIsSaving] = useState(false);
   const [saveMessage, setSaveMessage] = useState('');
+  const [loading, setLoading] = useState(true); // ⬅ New loading state
 
   useEffect(() => {
     async function getUser() {
@@ -17,13 +18,16 @@ export default function ProfilePage() {
         data: { user },
       } = await supabase.auth.getUser();
       if (user) {
-        const userProfile = { 
-          email: user.email ?? '', 
-         name: (user.user_metadata as Record<string, unknown>)?.name as string ?? ''
+        const userProfile = {
+          email: user.email ?? '',
+          name:
+            (user.user_metadata as Record<string, unknown>)?.name as string ??
+            '',
         };
         setProfile(userProfile);
         setOriginalProfile(userProfile);
       }
+      setLoading(false); // ⬅ Stop loading after fetch
     }
     getUser();
   }, []);
@@ -35,12 +39,12 @@ export default function ProfilePage() {
   async function handleSave() {
     setIsSaving(true);
     setSaveMessage('');
-    
+
     try {
       const supabase = createClientComponentClient();
-      
+
       const { error } = await supabase.auth.updateUser({
-        data: { name: profile.name }
+        data: { name: profile.name },
       });
 
       if (error) {
@@ -68,6 +72,14 @@ export default function ProfilePage() {
     return name ? name.charAt(0).toUpperCase() : 'U';
   };
 
+  if (loading) {
+    return (
+      <div className="flex justify-center items-center h-64 text-foreground">
+        <div className="text-lg font-medium">Loading profile...</div>
+      </div>
+    );
+  }
+
   return (
     <div className="text-foreground">
       <h2 className="text-xl font-semibold mb-6">My Profile</h2>
@@ -94,35 +106,37 @@ export default function ProfilePage() {
           </div>
           <div>
             <label className="block text-sm text-muted mb-2">Email</label>
-            <input 
-              name="email" 
-              value={profile.email} 
-              readOnly 
-              className="w-full border border-theme rounded px-3 py-2 bg-muted text-muted-foreground cursor-not-allowed" 
+            <input
+              name="email"
+              value={profile.email}
+              readOnly
+              className="w-full border border-theme rounded px-3 py-2 bg-muted text-muted-foreground cursor-not-allowed"
             />
           </div>
-          
+
           {saveMessage && (
-            <div className={`p-3 rounded text-sm ${
-              saveMessage.includes('Error') 
-                ? 'bg-red-100 text-red-800 dark:bg-red-900 dark:text-red-200' 
-                : 'bg-green-100 text-green-800 dark:bg-green-900 dark:text-green-200'
-            }`}>
+            <div
+              className={`p-3 rounded text-sm ${
+                saveMessage.includes('Error')
+                  ? 'bg-red-100 text-red-800 dark:bg-red-900 dark:text-red-200'
+                  : 'bg-green-100 text-green-800 dark:bg-green-900 dark:text-green-200'
+              }`}
+            >
               {saveMessage}
             </div>
           )}
-          
+
           <div className="flex space-x-3 pt-4">
             {hasChanges ? (
               <>
-                <button 
+                <button
                   onClick={handleSave}
                   disabled={isSaving}
                   className="flex-1 bg-primary hover:bg-primary/90 disabled:bg-primary/50 text-primary-foreground px-4 py-2 rounded font-medium transition-colors"
                 >
                   {isSaving ? 'Saving...' : 'Save Changes'}
                 </button>
-                <button 
+                <button
                   onClick={handleCancel}
                   disabled={isSaving}
                   className="px-4 py-2 border border-theme rounded text-foreground hover:bg-muted transition-colors"
@@ -131,7 +145,7 @@ export default function ProfilePage() {
                 </button>
               </>
             ) : (
-              <button 
+              <button
                 onClick={() => setIsEditing(true)}
                 className="flex-1 bg-primary hover:bg-primary/90 text-primary-foreground px-4 py-2 rounded font-medium transition-colors"
               >
@@ -144,5 +158,3 @@ export default function ProfilePage() {
     </div>
   );
 }
-
-

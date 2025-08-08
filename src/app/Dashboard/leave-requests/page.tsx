@@ -132,26 +132,37 @@ export default function LeaveRequests() {
               </tr>
             </thead>
             <tbody>
-              {filtered.map((leave) => (
-                <tr
-                  key={leave.id}
-                  className="border-t border-theme hover:bg-muted/50 transition-colors"
-                >
-                  <td className="p-3">{leave.employee_name}</td>
-                  <td className="p-3">{leave.type}</td>
-                  <td className="p-3">{formatDate(leave.start_date)}</td>
-                  <td className="p-3">{formatDate(leave.end_date)}</td>
-                  <td className="p-3">
-                    <span
-                      className={`px-2 py-1 rounded-full text-xs font-medium ${getStatusColor(
-                        leave.status
-                      )}`}
-                    >
-                      {leave.status}
-                    </span>
+              {filtered.length ? (
+                filtered.map((leave) => (
+                  <tr
+                    key={leave.id}
+                    className="border-t border-theme hover:bg-muted/50 transition-colors"
+                  >
+                    <td className="p-3">{leave.employee_name}</td>
+                    <td className="p-3">{leave.type}</td>
+                    <td className="p-3">{formatDate(leave.start_date)}</td>
+                    <td className="p-3">{formatDate(leave.end_date)}</td>
+                    <td className="p-3">
+                      <span
+                        className={`px-2 py-1 rounded-full text-xs font-medium ${getStatusColor(
+                          leave.status
+                        )}`}
+                      >
+                        {leave.status}
+                      </span>
+                    </td>
+                  </tr>
+                ))
+              ) : (
+                <tr className="border-t border-theme">
+                  <td
+                    colSpan={5}
+                    className="p-4 text-center text-muted-foreground"
+                  >
+                    No data found
                   </td>
                 </tr>
-              ))}
+              )}
             </tbody>
           </table>
         )}
