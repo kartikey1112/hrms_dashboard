@@ -1,0 +1,602 @@
+[
+  {
+    "employee": "Patricia Ramirez",
+    "type": "Bereavement Leave",
+    "dates": "Feb 22 - Mar 7",
+    "status": "Pending"
+  },
+  {
+    "employee": "Mary Adams",
+    "type": "Bereavement Leave",
+    "dates": "Aug 24 - Sep 2",
+    "status": "Approved"
+  },
+  {
+    "employee": "Sandra Watson",
+    "type": "Study Leave",
+    "dates": "Dec 18 - Dec 27",
+    "status": "Approved"
+  },
+  {
+    "employee": "Sharon Barnes",
+    "type": "Paternity Leave",
+    "dates": "Aug 23 - Aug 25",
+    "status": "Pending"
+  },
+  {
+    "employee": "Mary Adams",
+    "type": "Annual Leave",
+    "dates": "May 12 - May 15",
+    "status": "Approved"
+  },
+  {
+    "employee": "Laura Young",
+    "type": "Paternity Leave",
+    "dates": "Dec 26 - Jan 3",
+    "status": "Rejected"
+  },
+  {
+    "employee": "Nathan Thomas",
+    "type": "Sick Leave",
+    "dates": "Dec 24 - Jan 7",
+    "status": "Approved"
+  },
+  {
+    "employee": "Gary Sanders",
+    "type": "Paternity Leave",
+    "dates": "Jul 28 - Aug 3",
+    "status": "Approved"
+  },
+  {
+    "employee": "Stephen Lewis",
+    "type": "Paternity Leave",
+    "dates": "Jan 30 - Feb 4",
+    "status": "Rejected"
+  },
+  {
+    "employee": "Dorothy Wilson",
+    "type": "Maternity Leave",
+    "dates": "Jun 11 - Jun 21",
+    "status": "Rejected"
+  },
+  {
+    "employee": "Kyle Sanders",
+    "type": "Bereavement Leave",
+    "dates": "Jun 29 - Jun 30",
+    "status": "Rejected"
+  },
+  {
+    "employee": "Karen Jackson",
+    "type": "Bereavement Leave",
+    "dates": "Jan 8 - Jan 13",
+    "status": "Approved"
+  },
+  {
+    "employee": "Raymond Flores",
+    "type": "Study Leave",
+    "dates": "Sep 17 - Sep 28",
+    "status": "Approved"
+  },
+  {
+    "employee": "Betty Green",
+    "type": "Annual Leave",
+    "dates": "Sep 4 - Sep 14",
+    "status": "Pending"
+  },
+  {
+    "employee": "Michelle Gray",
+    "type": "Bereavement Leave",
+    "dates": "Apr 3 - Apr 12",
+    "status": "Pending"
+  },
+  {
+    "employee": "Ruth Cooper",
+    "type": "Paternity Leave",
+    "dates": "Aug 6 - Aug 13",
+    "status": "Pending"
+  },
+  {
+    "employee": "Sharon Barnes",
+    "type": "Study Leave",
+    "dates": "Jul 28 - Jul 31",
+    "status": "Approved"
+  },
+  {
+    "employee": "Lisa Scott",
+    "type": "Paternity Leave",
+    "dates": "Apr 23 - Apr 28",
+    "status": "Pending"
+  },
+  {
+    "employee": "Susan Lee",
+    "type": "Paternity Leave",
+    "dates": "Oct 18 - Oct 23",
+    "status": "Pending"
+  },
+  {
+    "employee": "Jerry Washington",
+    "type": "Bereavement Leave",
+    "dates": "May 17 - May 21",
+    "status": "Rejected"
+  },
+  {
+    "employee": "Kimberly Peterson",
+    "type": "Maternity Leave",
+    "dates": "Jun 10 - Jun 11",
+    "status": "Approved"
+  },
+  {
+    "employee": "Michelle Allen",
+    "type": "Maternity Leave",
+    "dates": "Nov 1 - Nov 7",
+    "status": "Approved"
+  },
+  {
+    "employee": "Laura Hernandez",
+    "type": "Annual Leave",
+    "dates": "Mar 30 - Apr 13",
+    "status": "Rejected"
+  },
+  {
+    "employee": "Peter Scott",
+    "type": "Personal Leave",
+    "dates": "Mar 24 - Mar 30",
+    "status": "Approved"
+  },
+  {
+    "employee": "Matthew Coleman",
+    "type": "Study Leave",
+    "dates": "Nov 20 - Nov 27",
+    "status": "Approved"
+  },
+  {
+    "employee": "Jessica Allen",
+    "type": "Annual Leave",
+    "dates": "Apr 8 - Apr 16",
+    "status": "Approved"
+  },
+  {
+    "employee": "Aaron Nelson",
+    "type": "Paternity Leave",
+    "dates": "Jul 17 - Jul 27",
+    "status": "Rejected"
+  },
+  {
+    "employee": "Alexander Campbell",
+    "type": "Personal Leave",
+    "dates": "Oct 6 - Oct 15",
+    "status": "Approved"
+  },
+  {
+    "employee": "Ryan Cook",
+    "type": "Maternity Leave",
+    "dates": "Jul 18 - Jul 27",
+    "status": "Approved"
+  },
+  {
+    "employee": "Raymond Ramos",
+    "type": "Annual Leave",
+    "dates": "Sep 26 - Oct 9",
+    "status": "Rejected"
+  },
+  {
+    "employee": "Mark Young",
+    "type": "Annual Leave",
+    "dates": "Feb 18 - Feb 22",
+    "status": "Pending"
+  },
+  {
+    "employee": "Anthony Allen",
+    "type": "Maternity Leave",
+    "dates": "Jul 22 - Jul 31",
+    "status": "Approved"
+  },
+  {
+    "employee": "Michelle Nelson",
+    "type": "Sick Leave",
+    "dates": "Apr 22 - May 2",
+    "status": "Approved"
+  },
+  {
+    "employee": "David Adams",
+    "type": "Maternity Leave",
+    "dates": "Aug 13 - Aug 14",
+    "status": "Rejected"
+  },
+  {
+    "employee": "Nancy Morris",
+    "type": "Study Leave",
+    "dates": "Jan 2 - Jan 5",
+    "status": "Pending"
+  },
+  {
+    "employee": "Nathan Thomas",
+    "type": "Paternity Leave",
+    "dates": "Feb 3 - Feb 16",
+    "status": "Approved"
+  },
+  {
+    "employee": "Joshua Brooks",
+    "type": "Paternity Leave",
+    "dates": "Nov 17 - Nov 23",
+    "status": "Pending"
+  },
+  {
+    "employee": "Zachary Thompson",
+    "type": "Maternity Leave",
+    "dates": "Aug 20 - Aug 28",
+    "status": "Rejected"
+  },
+  {
+    "employee": "Karen Kim",
+    "type": "Bereavement Leave",
+    "dates": "Sep 11 - Sep 21",
+    "status": "Pending"
+  },
+  {
+    "employee": "Jonathan Brooks",
+    "type": "Annual Leave",
+    "dates": "Oct 5 - Oct 9",
+    "status": "Rejected"
+  },
+  {
+    "employee": "Sharon Barnes",
+    "type": "Personal Leave",
+    "dates": "Apr 3 - Apr 16",
+    "status": "Approved"
+  },
+  {
+    "employee": "Jerry Jones",
+    "type": "Bereavement Leave",
+    "dates": "Nov 6 - Nov 7",
+    "status": "Pending"
+  },
+  {
+    "employee": "Sandra Moore",
+    "type": "Study Leave",
+    "dates": "May 6 - May 10",
+    "status": "Approved"
+  },
+  {
+    "employee": "Kevin Kim",
+    "type": "Bereavement Leave",
+    "dates": "Mar 4 - Mar 13",
+    "status": "Approved"
+  },
+  {
+    "employee": "Deborah Flores",
+    "type": "Sick Leave",
+    "dates": "Jan 14 - Jan 23",
+    "status": "Pending"
+  },
+  {
+    "employee": "Ruth Cooper",
+    "type": "Sick Leave",
+    "dates": "Nov 3 - Nov 4",
+    "status": "Approved"
+  },
+  {
+    "employee": "Dennis Martin",
+    "type": "Study Leave",
+    "dates": "Feb 14 - Feb 16",
+    "status": "Pending"
+  },
+  {
+    "employee": "Nancy Barnes",
+    "type": "Personal Leave",
+    "dates": "Sep 11 - Sep 15",
+    "status": "Approved"
+  },
+  {
+    "employee": "Jason Stewart",
+    "type": "Study Leave",
+    "dates": "Oct 12 - Oct 18",
+    "status": "Rejected"
+  },
+  {
+    "employee": "Kimberly Howard",
+    "type": "Paternity Leave",
+    "dates": "Aug 10 - Aug 19",
+    "status": "Approved"
+  },
+  {
+    "employee": "Michael Perry",
+    "type": "Annual Leave",
+    "dates": "Feb 7 - Feb 16",
+    "status": "Rejected"
+  },
+  {
+    "employee": "Aaron King",
+    "type": "Annual Leave",
+    "dates": "Nov 2 - Nov 12",
+    "status": "Rejected"
+  },
+  {
+    "employee": "Edward Wood",
+    "type": "Paternity Leave",
+    "dates": "Apr 6 - Apr 9",
+    "status": "Approved"
+  },
+  {
+    "employee": "Donna Wood",
+    "type": "Personal Leave",
+    "dates": "Jul 9 - Jul 12",
+    "status": "Rejected"
+  },
+  {
+    "employee": "Laura Watson",
+    "type": "Personal Leave",
+    "dates": "Nov 25 - Dec 3",
+    "status": "Approved"
+  },
+  {
+    "employee": "Karen Coleman",
+    "type": "Personal Leave",
+    "dates": "Aug 30 - Sep 6",
+    "status": "Approved"
+  },
+  {
+    "employee": "Brian Anderson",
+    "type": "Sick Leave",
+    "dates": "May 19 - May 26",
+    "status": "Approved"
+  },
+  {
+    "employee": "Sharon Cook",
+    "type": "Study Leave",
+    "dates": "May 18 - May 22",
+    "status": "Approved"
+  },
+  {
+    "employee": "Donna Gray",
+    "type": "Personal Leave",
+    "dates": "Jun 28 - Jun 29",
+    "status": "Approved"
+  },
+  {
+    "employee": "Benjamin Garcia",
+    "type": "Study Leave",
+    "dates": "Nov 25 - Dec 6",
+    "status": "Rejected"
+  },
+  {
+    "employee": "Emily Reed",
+    "type": "Study Leave",
+    "dates": "Feb 14 - Feb 28",
+    "status": "Pending"
+  },
+  {
+    "employee": "Matthew Coleman",
+    "type": "Sick Leave",
+    "dates": "Mar 1 - Mar 9",
+    "status": "Approved"
+  },
+  {
+    "employee": "Ruth Carter",
+    "type": "Personal Leave",
+    "dates": "Dec 28 - Jan 6",
+    "status": "Pending"
+  },
+  {
+    "employee": "Nicholas Walker",
+    "type": "Paternity Leave",
+    "dates": "Oct 18 - Oct 24",
+    "status": "Rejected"
+  },
+  {
+    "employee": "Emily Reed",
+    "type": "Sick Leave",
+    "dates": "Dec 21 - Dec 28",
+    "status": "Approved"
+  },
+  {
+    "employee": "Jeffrey Jones",
+    "type": "Bereavement Leave",
+    "dates": "May 27 - Jun 5",
+    "status": "Approved"
+  },
+  {
+    "employee": "Lisa Allen",
+    "type": "Personal Leave",
+    "dates": "Apr 30 - May 1",
+    "status": "Approved"
+  },
+  {
+    "employee": "Deborah Smith",
+    "type": "Maternity Leave",
+    "dates": "Oct 6 - Oct 16",
+    "status": "Rejected"
+  },
+  {
+    "employee": "Michelle Washington",
+    "type": "Paternity Leave",
+    "dates": "Sep 19 - Sep 24",
+    "status": "Rejected"
+  },
+  {
+    "employee": "Carol Peterson",
+    "type": "Study Leave",
+    "dates": "Dec 26 - Jan 5",
+    "status": "Rejected"
+  },
+  {
+    "employee": "Ryan Cook",
+    "type": "Sick Leave",
+    "dates": "Jan 11 - Jan 21",
+    "status": "Approved"
+  },
+  {
+    "employee": "Deborah Smith",
+    "type": "Annual Leave",
+    "dates": "Nov 22 - Nov 25",
+    "status": "Rejected"
+  },
+  {
+    "employee": "Emily Bryant",
+    "type": "Paternity Leave",
+    "dates": "Nov 28 - Dec 7",
+    "status": "Pending"
+  },
+  {
+    "employee": "Betty Green",
+    "type": "Paternity Leave",
+    "dates": "Jul 24 - Aug 3",
+    "status": "Rejected"
+  },
+  {
+    "employee": "Frank Bennett",
+    "type": "Annual Leave",
+    "dates": "Apr 3 - Apr 17",
+    "status": "Approved"
+  },
+  {
+    "employee": "Susan Lee",
+    "type": "Paternity Leave",
+    "dates": "Feb 4 - Feb 15",
+    "status": "Approved"
+  },
+  {
+    "employee": "Susan Kelly",
+    "type": "Annual Leave",
+    "dates": "Dec 10 - Dec 12",
+    "status": "Approved"
+  },
+  {
+    "employee": "Benjamin Garcia",
+    "type": "Annual Leave",
+    "dates": "Jan 10 - Jan 22",
+    "status": "Pending"
+  },
+  {
+    "employee": "Nicholas Walker",
+    "type": "Annual Leave",
+    "dates": "Oct 31 - Nov 2",
+    "status": "Rejected"
+  },
+  {
+    "employee": "Lisa Flores",
+    "type": "Maternity Leave",
+    "dates": "Jun 18 - Jun 21",
+    "status": "Pending"
+  },
+  {
+    "employee": "Paul Wright",
+    "type": "Personal Leave",
+    "dates": "Jul 19 - Jul 30",
+    "status": "Approved"
+  },
+  {
+    "employee": "Peter Scott",
+    "type": "Sick Leave",
+    "dates": "Oct 17 - Oct 29",
+    "status": "Rejected"
+  },
+  {
+    "employee": "Lisa Scott",
+    "type": "Study Leave",
+    "dates": "Jun 5 - Jun 19",
+    "status": "Rejected"
+  },
+  {
+    "employee": "Betty White",
+    "type": "Sick Leave",
+    "dates": "May 10 - May 11",
+    "status": "Pending"
+  },
+  {
+    "employee": "Barbara James",
+    "type": "Paternity Leave",
+    "dates": "Mar 4 - Mar 15",
+    "status": "Rejected"
+  },
+  {
+    "employee": "Paul Wood",
+    "type": "Bereavement Leave",
+    "dates": "Dec 1 - Dec 15",
+    "status": "Pending"
+  },
+  {
+    "employee": "Linda Morales",
+    "type": "Study Leave",
+    "dates": "Nov 7 - Nov 12",
+    "status": "Pending"
+  },
+  {
+    "employee": "Susan Kelly",
+    "type": "Study Leave",
+    "dates": "Jul 3 - Jul 16",
+    "status": "Approved"
+  },
+  {
+    "employee": "Jeffrey Jones",
+    "type": "Bereavement Leave",
+    "dates": "Jun 22 - Jun 29",
+    "status": "Rejected"
+  },
+  {
+    "employee": "Thomas Harris",
+    "type": "Bereavement Leave",
+    "dates": "Nov 5 - Nov 8",
+    "status": "Approved"
+  },
+  {
+    "employee": "Brian Williams",
+    "type": "Annual Leave",
+    "dates": "May 16 - May 22",
+    "status": "Approved"
+  },
+  {
+    "employee": "Kimberly Watson",
+    "type": "Study Leave",
+    "dates": "Sep 30 - Oct 5",
+    "status": "Rejected"
+  },
+  {
+    "employee": "Ronald Ramirez",
+    "type": "Annual Leave",
+    "dates": "Mar 16 - Mar 20",
+    "status": "Rejected"
+  },
+  {
+    "employee": "Michael Perry",
+    "type": "Bereavement Leave",
+    "dates": "Mar 7 - Mar 9",
+    "status": "Rejected"
+  },
+  {
+    "employee": "Nancy Morris",
+    "type": "Paternity Leave",
+    "dates": "Aug 31 - Sep 6",
+    "status": "Pending"
+  },
+  {
+    "employee": "Dennis Martin",
+    "type": "Study Leave",
+    "dates": "Feb 19 - Feb 26",
+    "status": "Rejected"
+  },
+  {
+    "employee": "Susan Taylor",
+    "type": "Paternity Leave",
+    "dates": "Jul 30 - Aug 7",
+    "status": "Rejected"
+  },
+  {
+    "employee": "Scott Turner",
+    "type": "Annual Leave",
+    "dates": "Sep 22 - Sep 27",
+    "status": "Rejected"
+  },
+  {
+    "employee": "Kimberly Edwards",
+    "type": "Paternity Leave",
+    "dates": "Jan 9 - Jan 10",
+    "status": "Pending"
+  },
+  {
+    "employee": "Ruth Gonzalez",
+    "type": "Personal Leave",
+    "dates": "Dec 24 - Jan 6",
+    "status": "Approved"
+  }
+]

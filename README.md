@@ -1,36 +1,97 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+HRMS Dashboard — Next.js (App Router) + Supabase Auth
 
-## Getting Started
+## Setup
 
-First, run the development server:
-
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
+1) Install dependencies
+```
+npm install
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+2) Create a `.env.local` in project root with your Supabase credentials:
+```
+NEXT_PUBLIC_SUPABASE_URL=your_url
+NEXT_PUBLIC_SUPABASE_ANON_KEY=your_anon_key
+SUPABASE_SERVICE_ROLE_KEY=your_service_role_key
+```
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+3) Set up Supabase Database:
+   - Go to your Supabase project dashboard
+   - Navigate to SQL Editor
+   - Run the SQL from `scripts/create-tables.sql` to create the database tables
+   - Or copy and paste the SQL content into the SQL Editor
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+4) Seed the database with sample data:
+```
+node scripts/seed-database.js
+```
 
-## Learn More
+5) Start the dev server
+```
+npm run dev
+```
 
-To learn more about Next.js, take a look at the following resources:
+Open `http://localhost:3000`.
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+## Authentication
+- Login with a Supabase email/password user you created in your project.
+- Middleware protects `/Dashboard` routes. Authenticated users hitting `/` are redirected to `/Dashboard`.
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+## Features
+- Login/Signup page at `/` (email/password via Supabase)
+- Protected dashboard at `/Dashboard`
+- CRUD operations for employees and leaves using Supabase database
+- Views:
+  - Employee Directory with search/filter and CRUD operations
+  - Leave Requests with status filter
+  - Profile (editable name + read-only email)
+- Dark/Light theme toggle
+- Responsive design
 
-## Deploy on Vercel
+## Database Schema
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+### Employees Table
+- `id` (UUID, Primary Key)
+- `name` (VARCHAR)
+- `email` (VARCHAR, Unique)
+- `department` (VARCHAR)
+- `role` (VARCHAR)
+- `status` (VARCHAR: 'Active' or 'Inactive')
+- `created_at` (TIMESTAMP)
+- `updated_at` (TIMESTAMP)
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+### Leaves Table
+- `id` (UUID, Primary Key)
+- `employee_id` (UUID, Foreign Key to employees.id)
+- `employee_name` (VARCHAR)
+- `type` (VARCHAR)
+- `start_date` (DATE)
+- `end_date` (DATE)
+- `status` (VARCHAR: 'Pending', 'Approved', or 'Rejected')
+- `created_at` (TIMESTAMP)
+- `updated_at` (TIMESTAMP)
+
+## API Endpoints
+
+### Employees
+- `GET /api/employees` - Get all employees
+- `POST /api/employees` - Create new employee
+- `GET /api/employees/[id]` - Get specific employee
+- `PUT /api/employees/[id]` - Update employee
+- `DELETE /api/employees/[id]` - Delete employee
+
+### Leaves
+- `GET /api/leaves` - Get all leaves
+- `POST /api/leaves` - Create new leave
+
+## CRUD Operations
+- **Create**: Add new employees via modal form
+- **Read**: View employees with search and filter
+- **Update**: Edit employee details via modal
+- **Delete**: Remove employees with confirmation
+
+## Known Issues
+- Profile save is local only (no persistence to Supabase DB).
+- Leave CRUD operations are read-only (no create/edit/delete for leaves yet).
+
+## Credentials
+- Use any email/password user registered in your Supabase project. If you need a quick test user, create one in Supabase Auth → Users.
