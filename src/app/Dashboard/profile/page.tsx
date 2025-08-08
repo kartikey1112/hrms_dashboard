@@ -19,7 +19,7 @@ export default function ProfilePage() {
       if (user) {
         const userProfile = { 
           email: user.email ?? '', 
-          name: (user.user_metadata as any)?.name ?? '' 
+         name: (user.user_metadata as Record<string, unknown>)?.name as string ?? ''
         };
         setProfile(userProfile);
         setOriginalProfile(userProfile);
