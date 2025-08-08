@@ -1,10 +1,16 @@
 import { NextRequest, NextResponse } from 'next/server';
 import { createClient } from '@supabase/supabase-js';
 
+interface RouteContext {
+  params: { id: string };
+}
+
 export async function GET(
   request: NextRequest,
-  { params }: { params: { id: string } }
+  context: RouteContext
 ) {
+  const { id } = context.params;
+
   try {
     const supabase = createClient(
       process.env.NEXT_PUBLIC_SUPABASE_URL!,
@@ -14,7 +20,7 @@ export async function GET(
     const { data: employee, error } = await supabase
       .from('employees')
       .select('*')
-      .eq('id', params.id)
+      .eq('id', id)
       .single();
 
     if (error) {
@@ -26,15 +32,17 @@ export async function GET(
     }
 
     return NextResponse.json(employee);
-  } catch (error) {
+  } catch {
     return NextResponse.json({ error: 'Internal server error' }, { status: 500 });
   }
 }
 
 export async function PUT(
   request: NextRequest,
-  { params }: { params: { id: string } }
+  context: RouteContext
 ) {
+  const { id } = context.params;
+
   try {
     const supabase = createClient(
       process.env.NEXT_PUBLIC_SUPABASE_URL!,
@@ -45,7 +53,7 @@ export async function PUT(
     const { data, error } = await supabase
       .from('employees')
       .update(body)
-      .eq('id', params.id)
+      .eq('id', id)
       .select()
       .single();
 
@@ -54,15 +62,17 @@ export async function PUT(
     }
 
     return NextResponse.json(data);
-  } catch (error) {
+  } catch {
     return NextResponse.json({ error: 'Internal server error' }, { status: 500 });
   }
 }
 
 export async function DELETE(
   request: NextRequest,
-  { params }: { params: { id: string } }
+  context: RouteContext
 ) {
+  const { id } = context.params;
+
   try {
     const supabase = createClient(
       process.env.NEXT_PUBLIC_SUPABASE_URL!,
@@ -72,14 +82,14 @@ export async function DELETE(
     const { error } = await supabase
       .from('employees')
       .delete()
-      .eq('id', params.id);
+      .eq('id', id);
 
     if (error) {
       return NextResponse.json({ error: error.message }, { status: 500 });
     }
 
     return NextResponse.json({ message: 'Employee deleted successfully' });
-  } catch (error) {
+  } catch {
     return NextResponse.json({ error: 'Internal server error' }, { status: 500 });
   }
 }
