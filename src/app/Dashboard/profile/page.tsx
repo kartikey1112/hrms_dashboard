@@ -39,7 +39,6 @@ export default function ProfilePage() {
     try {
       const supabase = createClientComponentClient();
       
-      // Update user metadata with the new name
       const { error } = await supabase.auth.updateUser({
         data: { name: profile.name }
       });
@@ -73,7 +72,6 @@ export default function ProfilePage() {
     <div className="text-foreground">
       <h2 className="text-xl font-semibold mb-6">My Profile</h2>
       <div className="max-w-md">
-        {/* Avatar Section */}
         <div className="flex items-center space-x-4 mb-6">
           <div className="w-16 h-16 bg-primary rounded-full flex items-center justify-center text-primary-foreground text-xl font-semibold">
             {getInitials(profile.name)}
@@ -83,8 +81,6 @@ export default function ProfilePage() {
             <p className="text-muted-foreground text-sm">{profile.email}</p>
           </div>
         </div>
-
-        {/* Form Section */}
         <div className="space-y-4">
           <div>
             <label className="block text-sm text-muted mb-2">Name</label>
@@ -106,7 +102,6 @@ export default function ProfilePage() {
             />
           </div>
           
-          {/* Save Message */}
           {saveMessage && (
             <div className={`p-3 rounded text-sm ${
               saveMessage.includes('Error') 
@@ -117,7 +112,6 @@ export default function ProfilePage() {
             </div>
           )}
           
-          {/* Action Buttons */}
           <div className="flex space-x-3 pt-4">
             {hasChanges ? (
               <>

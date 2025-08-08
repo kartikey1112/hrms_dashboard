@@ -1,5 +1,5 @@
 "use client";
-
+import toast from "react-hot-toast";
 import { useEffect, useMemo, useState } from "react";
 
 type Employee = {
@@ -34,7 +34,6 @@ export default function EmployeeDirectory() {
     const timer = setTimeout(() => {
       setDebouncedSearch(search);
     }, 300);
-
     return () => clearTimeout(timer);
   }, [search]);
 
@@ -135,8 +134,10 @@ export default function EmployeeDirectory() {
         });
 
         if (response.ok) {
+          toast.success("Employee deleted sucessfully");
           setEmployees((prev) => prev.filter((emp) => emp.id !== id));
         } else {
+          toast.error("Employee deletion failed");
           console.error("Failed to delete employee");
         }
       } catch (error) {
@@ -160,6 +161,7 @@ export default function EmployeeDirectory() {
 
         if (response.ok) {
           const updatedEmployee = await response.json();
+          toast.success("Employee Updated Successfully");
           setEmployees((prev) =>
             prev.map((emp) =>
               emp.id === editingEmployee.id ? updatedEmployee : emp
@@ -184,6 +186,7 @@ export default function EmployeeDirectory() {
       setShowModal(false);
       setEditingEmployee(null);
     } catch (error) {
+      toast.error("Error saving employee");
       console.error("Error saving employee:", error);
     }
   };
@@ -196,16 +199,6 @@ export default function EmployeeDirectory() {
       [e.target.name]: e.target.value,
     }));
   };
-
-  if (loading) {
-    return (
-      <div className="text-foreground">
-        <div className="flex justify-center items-center h-64">
-          <div className="text-lg">Loading employees...</div>
-        </div>
-      </div>
-    );
-  }
 
   return (
     <div className="text-foreground">
@@ -252,74 +245,80 @@ export default function EmployeeDirectory() {
         </select>
       </div>
 
-      <div className="overflow-y-auto border border-theme rounded">
-        <table className="w-full text-sm">
-          <thead className="bg-muted sticky top-0">
-            <tr>
-              <th className="text-left p-3 text-muted-foreground font-medium">
-                Name
-              </th>
-              <th className="text-left p-3 text-muted-foreground font-medium">
-                Email
-              </th>
-              <th className="text-left p-3 text-muted-foreground font-medium">
-                Department
-              </th>
-              <th className="text-left p-3 text-muted-foreground font-medium">
-                Role
-              </th>
-              <th className="text-left p-3 text-muted-foreground font-medium">
-                Status
-              </th>
-              <th className="text-left p-3 text-muted-foreground font-medium">
-                Actions
-              </th>
-            </tr>
-          </thead>
-          <tbody>
-            {filtered.map((emp) => (
-              <tr
-                key={emp.id}
-                className="border-t border-theme hover:bg-muted/50 transition-colors"
-              >
-                <td className="p-3">{emp.name}</td>
-                <td className="p-3">{emp.email}</td>
-                <td className="p-3">{emp.department}</td>
-                <td className="p-3">{emp.role}</td>
-                <td className="p-3">
-                  <span
-                    className={`px-2 py-1 rounded-full text-xs font-medium ${
-                      emp.status === "Active"
-                        ? "bg-green-100 text-green-800 dark:bg-green-900 dark:text-green-200"
-                        : "bg-red-100 text-red-800 dark:bg-red-900 dark:text-red-200"
-                    }`}
-                  >
-                    {emp.status}
-                  </span>
-                </td>
-                <td className="p-3">
-                  <div className="flex space-x-2">
-                    <button
-                      onClick={() => handleEdit(emp)}
-                      className="text-blue-600 hover:text-blue-800 text-sm transition-colors"
-                    >
-                      Edit
-                    </button>
-                    <button
-                      onClick={() => handleDelete(emp.id)}
-                      className="text-red-600 hover:text-red-800 text-sm transition-colors"
-                    >
-                      Delete
-                    </button>
-                  </div>
-                </td>
+      <div className="overflow-y-auto border border-theme rounded flex items-center justify-center">
+        {loading ? (
+          <div className="text-foreground">
+            <div className="flex justify-center items-center h-64">
+              <div className="text-lg">Loading employees...</div>
+            </div>
+          </div>
+        ) : (
+          <table className="w-full text-sm">
+            <thead className="bg-muted sticky top-0">
+              <tr>
+                <th className="text-left p-3 text-muted-foreground font-medium">
+                  Name
+                </th>
+                <th className="text-left p-3 text-muted-foreground font-medium">
+                  Email
+                </th>
+                <th className="text-left p-3 text-muted-foreground font-medium">
+                  Department
+                </th>
+                <th className="text-left p-3 text-muted-foreground font-medium">
+                  Role
+                </th>
+                <th className="text-left p-3 text-muted-foreground font-medium">
+                  Status
+                </th>
+                <th className="text-left p-3 text-muted-foreground font-medium">
+                  Actions
+                </th>
               </tr>
-            ))}
-          </tbody>
-        </table>
+            </thead>
+            <tbody>
+              {filtered.map((emp) => (
+                <tr
+                  key={emp.id}
+                  className="border-t border-theme hover:bg-muted/50 transition-colors"
+                >
+                  <td className="p-3">{emp.name}</td>
+                  <td className="p-3">{emp.email}</td>
+                  <td className="p-3">{emp.department}</td>
+                  <td className="p-3">{emp.role}</td>
+                  <td className="p-3">
+                    <span
+                      className={`px-2 py-1 rounded-full text-xs font-medium ${
+                        emp.status === "Active"
+                          ? "bg-green-100 text-green-800 dark:bg-green-900 dark:text-green-200"
+                          : "bg-red-100 text-red-800 dark:bg-red-900 dark:text-red-200"
+                      }`}
+                    >
+                      {emp.status}
+                    </span>
+                  </td>
+                  <td className="p-3">
+                    <div className="flex space-x-2">
+                      <button
+                        onClick={() => handleEdit(emp)}
+                        className="text-blue-600 hover:text-blue-800 text-sm transition-colors"
+                      >
+                        Edit
+                      </button>
+                      <button
+                        onClick={() => handleDelete(emp.id)}
+                        className="text-red-600 hover:text-red-800 text-sm transition-colors"
+                      >
+                        Delete
+                      </button>
+                    </div>
+                  </td>
+                </tr>
+              ))}
+            </tbody>
+          </table>
+        )}
       </div>
-
-      {/* Modal */}
       {showModal && (
         <div className="fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center z-50">
           <div className="bg-card border border-theme rounded-lg p-6 w-full max-w-md">
